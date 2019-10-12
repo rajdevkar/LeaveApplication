@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+            android:id="@+id/leave_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Leave Type"
+            android:layout_marginTop="8dp"
+            android:padding="15dp" />
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:padding="15dp"
+            android:text="(Leave types : Medical, Sick, Educational, Vacation, Study Research)"
+            android:textAlignment="gravity"
+            android:textColor="#80807676"
+            android:textSize="12sp" />
+
+    <EditText
+            android:id="@+id/from_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="From Date"
+            android:clickable="true"
+            android:maxLength="10"
+            android:padding="15dp" />
+
+    <EditText
+            android:id="@+id/to_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="To Date"
+            android:clickable="true"
+            android:maxLength="10"
+            android:layout_marginTop="8dp"
+            android:padding="15dp" />
+
+    <EditText
+            android:id="@+id/leave_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Leave Reason"
+            android:layout_marginTop="8dp"
+            android:padding="15dp" />
+
+    <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#14b58f"
+            android:backgroundTint="#009688"
+            android:layout_marginTop="8dp"
+            android:padding="15dp"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:textColor="#F7F2F2"
+            android:textSize="15sp" />
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:text="LOGIN"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+    <EditText
+            android:id="@+id/username"
+            android:hint="Email ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:background="#fff"
+            android:inputType="textEmailAddress"
+    />
+
+    <EditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:background="#fff"
+            android:hint="Password"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/username"
+            android:inputType="textPassword"
+    />
+
+    <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:background="#14b58f"
+            android:textColor="#fff"
+            android:layout_below="@+id/pwd"
+            android:layout_marginTop="17dp"
+            android:layout_alignStart="@+id/pwd"
+            android:layout_alignEnd="@+id/pwd"
+    />
+    <TextView
+            android:text="New User? Sign Up "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_sign_up"
+            android:layout_below="@id/btn_login"
+            android:layout_marginTop="19dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="#B66F06"
+    />
+</RelativeLayout>
