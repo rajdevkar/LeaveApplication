@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity implements DatePickerDia
             str_doj, str_pass, str_confirmpass, str_userType;
     String editDOBString, editDOJString;
     String uid, username;
-    String userTypeArray[] = {"Student", "HOD", "Principal"};
+    String userTypeArray[] = {"Faculty", "HOD", "Principal"};
 
     private FirebaseAuth auth;
     FirebaseFirestore db;
@@ -189,7 +189,7 @@ public class RegisterActivity extends AppCompatActivity implements DatePickerDia
                                                 db.collection("Users")
                                                         .document(uid)
                                                         .set(user);
-                                                if (str_userType.equals("Student"))
+                                                if (str_userType.equals("Faculty"))
                                                     startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
                                                 else if (str_userType.equals("HOD"))
                                                     startActivity(new Intent(RegisterActivity.this, HODActivity.class));

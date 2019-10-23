@@ -43,7 +43,7 @@ public class SplashScreen extends AppCompatActivity {
                                 userType = document.get("userType").toString();
                             }
                             if (curUser != null) {
-                                if (userType.equals("Student"))
+                                if (userType.equals("Faculty"))
                                     startActivity(new Intent(SplashScreen.this, HomeActivity.class));
                                 else if (userType.equals("HOD"))
                                     startActivity(new Intent(SplashScreen.this, HODActivity.class));

@@ -22,7 +22,7 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txt_username, txt_leave_reason, txt_from_date, txt_to_date;
-        Button approve;
+        Button approve, reject;
         listListener listListener;
 
         public MyViewHolder(View view, listListener listListener) {
@@ -32,8 +32,10 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
             txt_from_date = view.findViewById(R.id.from_date);
             txt_to_date = view.findViewById(R.id.to_date);
             approve = view.findViewById(R.id.approve);
+            reject = view.findViewById(R.id.reject);
 
             approve.setOnClickListener(this);
+            reject.setOnClickListener(this);
 
             this.listListener = listListener;
         }
@@ -42,12 +44,22 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
         @Override
         public void onClick(View v) {
             Leave leave = list.get(getAdapterPosition());
-            listListener.onListClickListener(leave.getUid());
+            switch (v.getId()) {
+                case R.id.approve:
+                    listListener.onApproveClickListener(leave.getUid());
+                    break;
+                case R.id.reject:
+                    listListener.onRejectClickListener(leave.getUid());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     public interface listListener {
-        void onListClickListener(String uid);
+        void onApproveClickListener(String uid);
+        void onRejectClickListener(String uid);
     }
 
     public listAdapter(List<Leave> list, listListener listListener) {

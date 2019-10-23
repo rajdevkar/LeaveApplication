@@ -94,7 +94,7 @@ public class HODActivity extends AppCompatActivity implements listAdapter.listLi
     }
 
     @Override
-    public void onListClickListener(String uid) {
+    public void onApproveClickListener(String uid) {
         final String uuid = uid;
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Approve?");
@@ -105,6 +105,33 @@ public class HODActivity extends AppCompatActivity implements listAdapter.listLi
                         db.collection("Leave")
                                 .document(uuid)
                                 .update("approved", "HOD_approved");
+                        List.clear();
+                        mAdapter.notifyDataSetChanged();
+                        getList();
+                    }
+                });
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+    @Override
+    public void onRejectClickListener(String uid) {
+        final String uuid = uid;
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Reject?");
+        alertDialogBuilder.setPositiveButton("yes",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        db.collection("Leave")
+                                .document(uuid)
+                                .update("approved", "HOD_rejected");
                         List.clear();
                         mAdapter.notifyDataSetChanged();
                         getList();
